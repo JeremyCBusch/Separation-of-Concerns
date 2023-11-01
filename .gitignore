@@ -13,3 +13,11 @@ modules.xml
 .vs/Skeet/v17/Browse.VC.db
 .vs/slnx.sqlite
 .vs/VSWorkspaceState.json
+.vs/ProjectSettings.json
+.vs/Separation-of-Concerns/FileContentIndex/read.lock
+.vs/Separation-of-Concerns/v17/Browse.VC.db
+.vs/Skeet/v17/Browse.VC.db-wal
+*.db-shm
+.vs/Skeet/v17/Browse.VC.opendb
+.vs/Separation-of-Concerns/v17/.suo
+.vs/Skeet/v17/ipch/AutoPCH/d9692b750b2e49b6/INTERFACEELEMENT.ipch
