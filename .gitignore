@@ -6,3 +6,10 @@ misc.xml
 modules.xml
 .name
 .idea/
+*.vsidx
+.vs/Skeet/FileContentIndex/read.lock
+.vs/Skeet/v17/.suo
+.vs/Skeet/v17/ipch/AutoPCH/529e379519f5240d/GAME.ipch
+.vs/Skeet/v17/Browse.VC.db
+.vs/slnx.sqlite
+.vs/VSWorkspaceState.json
