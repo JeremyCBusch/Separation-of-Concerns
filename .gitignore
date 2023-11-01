@@ -6,3 +6,10 @@ misc.xml
 modules.xml
 .name
 .idea/
+*.vsidx
+.vs/Skeet/v17/.suo
+*.db
+*.db-shm
+*.db-wal
+*.opendb
+*.ipch
