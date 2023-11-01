@@ -21,3 +21,4 @@ modules.xml
 .vs/Skeet/v17/Browse.VC.opendb
 .vs/Separation-of-Concerns/v17/.suo
 .vs/Skeet/v17/ipch/AutoPCH/d9692b750b2e49b6/INTERFACEELEMENT.ipch
+*.ipch
