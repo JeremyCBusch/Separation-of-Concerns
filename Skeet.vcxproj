@@ -36,6 +36,7 @@
     <ClInclude Include="bird.h" />
     <ClInclude Include="effect.h" />
     <ClInclude Include="gun.h" />
+    <ClInclude Include="interfaceElement.h" />
     <ClInclude Include="points.h" />
     <ClInclude Include="position.h" />
     <ClInclude Include="score.h" />
