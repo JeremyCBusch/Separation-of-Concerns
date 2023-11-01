@@ -1,12 +1,12 @@
 #pragma once
 
 #include "position.h";
-#include "LogicElement.h";
-#include "InterfaceElement.h"
+#include "logicElement.h";
+#include "interfaceElement.h"
 
 class StorageElement
 {
-private:
+protected:
 	Position* pt;
 	Velocity* v;
 	double radius;
@@ -68,7 +68,16 @@ public:
 	}
 };
 
-class StorageEffects : public StorageElement
+class StorageEffect : public StorageElement
 {
+private:
+	Position* pt;  // location of the effect
+	double age;    // 1.0 = new, 0.0 = dead
 
+public:
+	StorageEffect(Position* pt) 
+	{
+		this->pt = pt;
+		this->age = 5.0;
+	}
 };
