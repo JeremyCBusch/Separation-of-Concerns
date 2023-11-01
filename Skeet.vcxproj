@@ -28,6 +28,7 @@
     <ClCompile Include="position.cpp" />
     <ClCompile Include="score.cpp" />
     <ClCompile Include="skeet.cpp" />
+    <ClCompile Include="interfaceElement.cpp" />
     <ClCompile Include="time.cpp" />
     <ClCompile Include="uiInteract.cpp" />
   </ItemGroup>
