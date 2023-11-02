@@ -30,6 +30,8 @@
     <ClCompile Include="score.cpp" />
     <ClCompile Include="skeet.cpp" />
     <ClCompile Include="interfaceElement.cpp" />
+    <ClCompile Include="SkeetLogic.cpp" />
+    <ClCompile Include="SkeetStorage.cpp" />
     <ClCompile Include="storageElement.cpp" />
     <ClCompile Include="time.cpp" />
     <ClCompile Include="uiInteract.cpp" />
@@ -45,6 +47,8 @@
     <ClInclude Include="position.h" />
     <ClInclude Include="score.h" />
     <ClInclude Include="skeet.h" />
+    <ClInclude Include="SkeetLogic.h" />
+    <ClInclude Include="SkeetStorage.h" />
     <ClInclude Include="storageElement.h" />
     <ClInclude Include="time.h" />
     <ClInclude Include="uiInteract.h" />

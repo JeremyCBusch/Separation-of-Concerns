@@ -12,68 +12,67 @@ public:
 	void processing();
 	void output();
 
-
 };
 
 
 class InterfaceElement {
 public:
-	virtual void draw() = 0;
+	InterfaceElement() {};
+	virtual void draw(StorageElement storage) = 0;
 };
-
 
 
 class InterfacePellet {
 public:
-	void draw();
+	void draw(StorageElement storage);
 };
 
 class InterfaceMissle {
 public:
-	void draw();
+	void draw(StorageElement storage);
 };
 
 class InterfaceBomb {
 public:
-	void draw();
+	void draw(StorageElement storage);
 };
 
 class InterfaceShrapnel {
 public:
-	void draw();
+	void draw(StorageElement storage);
 };
 
 class InterfaceFragment {
 public:
-	void draw();
+	void draw(StorageElement storage);
 };
 
 class InterfaceExhaust {
 public:
-	void draw();
+	void draw(StorageElement storage);
 };
 
 class InterfaceStreek {
 public:
-	void draw();
+	void draw(StorageElement storage);
 };
 
 class InterfaceStandard {
 public:
-	void draw();
+	void draw(StorageElement storage);
 };
 
 class InterfaceSinker {
 public:
-	void draw();
+	void draw(StorageElement storage);
 };
 
 class InterfaceFloater {
 public:
-	void draw();
+	void draw(StorageElement storage);
 };
 
 class InterfaceCrazy {
 public:
-	void draw();
+	void draw(StorageElement storage);
 };
