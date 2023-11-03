@@ -1,8 +1,13 @@
-#include "logicElement.h"
-#include "storageElement.h"
+#include "LogicElement.h"
+#include "StorageElement.h"
+#include "position.h"
 
+bool LogicElement::isOutOfBounds(StorageElement *storage) {
+   return (storage->getPosition()->getX() < -storage->getRadius() || storage->getPosition()->getX() >= storage->getDimensions().getX() + storage->getRadius() ||
+           storage->getPosition()->getY() < -storage->getRadius() || storage->getPosition()->getY() >= storage->getDimensions().getY() + storage->getRadius());
+}
 
-void LogicPellet::advance(StorageBullet* storage, std::list<StorageEffect*>& effects)
+void LogicPellet::advance(StorageBullet * storage, std::list<StorageEffect*>& effects)
 {
    // inertia
    storage->getPosition()->add(*storage->getVelocity());
