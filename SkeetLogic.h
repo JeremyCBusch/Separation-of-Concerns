@@ -18,7 +18,21 @@ public:
 	std::vector<StorageElement>::iterator end() {
 		return storage.end();
 	}
+   SkeetStorage::IteratorBullet beginBullet() {
+      return storage.beginBullet();
+   }
 
+   SkeetStorage::IteratorBullet endBullet() {
+      return storage.endBullet();
+   }
+
+   SkeetStorage::IteratorBird beginBird() {
+      return storage.beginBird();
+   }
+
+   SkeetStorage::IteratorBird endBird() {
+      return storage.endBird();
+   }
 
 	int getFramesLeft();
 	int getLevelNumber();

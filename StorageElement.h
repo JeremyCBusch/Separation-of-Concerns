@@ -10,16 +10,6 @@ class Velocity;
 
 class StorageElement
 {
-protected:
-   static Position dimensions;
-   Position pt;
-   Velocity v;
-   double radius;
-   int points;
-   bool dead;
-   LogicElement * pLogic;
-   InterfaceElement * pInterface;
-
 public:
    enum Type { BULLET, BIRD, EFFECT };
 
@@ -31,6 +21,7 @@ public:
    LogicElement * getLogicElement() { return pLogic; }
    InterfaceElement * getInterface() { return pInterface; }
    Position getDimensions() { return dimensions; }
+   Type getType() { return type; }
 
    void setPosition(Position pt) { this->pt = pt; }
    void setVelocity(Velocity v) { this->v = v; }
@@ -39,22 +30,34 @@ public:
    void setDead(bool isDead) { this->dead = isDead; }
    void setLogicElement(LogicElement* pLogic) { this->pLogic = pLogic; }
    void setInterfaceElement(InterfaceElement* pInterface) { this->pInterface = pInterface; }
+
+protected:
+   Type type;
+   static Position dimensions;
+   Position pt;
+   Velocity v;
+   double radius;
+   int points;
+   bool dead;
+   LogicElement * pLogic;
+   InterfaceElement * pInterface;
 };
 
 class StorageBird : public StorageElement
 {
 public:
    StorageBird(double radius = 25.0, double speed = 5.0, int points = 10);
-   void draw();
-   void advance();
 };
 
 class StorageBullet : public StorageElement
 {
 public:
    StorageBullet(double angle = 0.0, double speed = 30.0, double radius = 5.0, int value = 1);
-   void draw();
-   void advance();
+   void setTimeToDie(int timeToDie) { this->timeToDie = timeToDie; }
+   int getTimeToDie() { return timeToDie; }
+
+private:
+   int timeToDie;
 };
 
 class StorageEffect : public StorageElement
@@ -67,6 +70,7 @@ protected:
 public:
    StorageEffect(Position pt)
    {
+      this->type = EFFECT;
       this->ptEnd = pt;
       this->age = 5.0;
    }

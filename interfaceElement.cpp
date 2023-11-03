@@ -22,6 +22,7 @@
 #include "interfaceElement.h"
 #include "uiInteract.h"
 #include "StorageElement.h"
+#include "LogicElement.h"
 
 //void Interface::input(UserInput input)
 //{
@@ -34,6 +35,8 @@
 //void Interface::output()
 //{
 //}
+
+void InterfaceElement::input(UserInput input, LogicMissile logic, StorageBullet storage) {};
 
 void InterfaceElement::drawDot(const Position &point, double radius, double red, double green,
                                double blue) const {
@@ -122,6 +125,10 @@ void InterfaceMissle::draw(StorageElement storage)
       drawLine(*storage.getPosition(), ptNext, 1.0, 1.0, 0.0);
       drawDot(*storage.getPosition(), 3.0, 1.0, 1.0, 1.0);
    }
+}
+
+void InterfaceMissle::input(UserInput input, LogicMissile logic, StorageBullet storage) {
+   logic.input(storage, input.isUp(), input.isDown(), input.isB());
 }
 
 void InterfaceBomb::draw(StorageElement storage)

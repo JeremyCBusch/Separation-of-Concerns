@@ -1,10 +1,13 @@
 #pragma once
 
+//#include "uiInteract.h"
 
+class LogicMissile;
 class UserInput;
 class LogicElement;
 class StorageElement;
 class Position;
+class StorageBullet;
 
 //class Interface {
 //private:
@@ -22,6 +25,7 @@ class InterfaceElement {
 public:
 	InterfaceElement() = default;
 	virtual void draw(StorageElement storage) = 0;
+   virtual void input(UserInput input, LogicMissile logic, StorageBullet storage);
 protected:
    void drawDot(const Position& point, double radius, double red, double green, double blue) const;
    void drawLine(const Position& begin, const Position& end, double red, double green, double blue) const;
@@ -37,6 +41,7 @@ public:
 class InterfaceMissle : public InterfaceElement {
 public:
 	void draw(StorageElement storage) override;
+   void input (UserInput input, LogicMissile logic, StorageBullet storage) override;
 };
 
 class InterfaceBomb : public InterfaceElement {

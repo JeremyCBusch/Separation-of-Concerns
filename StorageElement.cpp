@@ -1,42 +1,12 @@
 #include "StorageElement.h"
 
-StorageShrapnel::StorageShrapnel(StorageBullet* bomb)
-{
-   // how long will this one live?
-   timeToDie = random(5, 15);
-
-   // The speed and direction is random
-   v->set(random(0.0, 6.2), random(10.0, 15.0));
-   pt = bomb->getPosition();
-
-   points = 0;
-
-   radius = 3.0;
-}
-
-StorageExhaust::StorageExhaust(Position* pt, Velocity* v)
-{
-   ptEnd = pt;
-
-   // age
-   age = 0.5;
-}
-
-
-
-
-StorageStreek::StorageStreek(Position* pt, Velocity* v)
-{
-   ptEnd = pt;
-   //v *= -1.0;
-   //ptEnd += v;
-
-   // age
-   age = 0.5;
+StorageBird::StorageBird(double radius, double speed, int points) {
+   this->type = BIRD;
 }
 
 StorageBullet::StorageBullet(double angle, double speed, double radius, int value)
 {
+   this->type = BULLET;
    this->isDead = false;
    this->angle = angle;
    this->speed = speed;
