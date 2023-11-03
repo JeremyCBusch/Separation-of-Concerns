@@ -24,6 +24,9 @@
     <ClCompile Include="effect.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="gun.cpp" />
+    <ClCompile Include="gunInterface.cpp" />
+    <ClCompile Include="gunLogic.cpp" />
+    <ClCompile Include="GunStorage.cpp" />
     <ClCompile Include="logicElement.cpp" />
     <ClCompile Include="points.cpp" />
     <ClCompile Include="position.cpp" />
@@ -41,6 +44,9 @@
     <ClInclude Include="bird.h" />
     <ClInclude Include="effect.h" />
     <ClInclude Include="gun.h" />
+    <ClInclude Include="gunInterface.h" />
+    <ClInclude Include="gunLogic.h" />
+    <ClInclude Include="GunStorage.h" />
     <ClInclude Include="interfaceElement.h" />
     <ClInclude Include="logicElement.h" />
     <ClInclude Include="points.h" />
