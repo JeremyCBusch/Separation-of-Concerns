@@ -10,18 +10,14 @@ class LogicElement {
 public:
 	virtual void advance(StorageElement* storage) = 0;
 	virtual void turn(StorageElement* storage) {};
-	bool isOutOfBounds(StorageElement* storage)
-	{
-		return (storage->getPosition()->getX() < -storage->getRadius() || storage->getPosition()->getX() >= storage->getDimensions().getX() + storage->getRadius() ||
-			storage->getPosition()->getY() < -storage->getRadius() || storage->getPosition()->getY() >= storage->getDimensions().getY() + storage->getRadius());
-	}
+	bool isOutOfBounds(StorageElement* storage);
 	int randomInt(int min, int max);
 	double randomFloat(double min, double max);
 };
 
 class LogicPellet : public LogicElement {
 public:
-	void advance(StorageBullet* storage, std::list<StorageEffect*>& effects);
+	void advance(StorageBullet * storage, std::list<StorageEffect*>& effects);
 };
 
 class LogicMissle : public LogicElement {

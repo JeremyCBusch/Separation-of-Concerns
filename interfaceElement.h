@@ -3,76 +3,83 @@
 
 class UserInput;
 class LogicElement;
-class Interface {
-private:
-	LogicElement logic;
-public:
-	void interface();
-	void input(UserInput input);
-	void processing();
-	void output();
+class StorageElement;
+class Position;
 
-};
+//class Interface {
+//private:
+//	LogicElement * logic;
+//public:
+//	void interface();
+//	void input(UserInput input);
+//	void processing();
+//	void output();
+//
+//};
 
 
 class InterfaceElement {
 public:
-	InterfaceElement() {};
+	InterfaceElement() = default;
 	virtual void draw(StorageElement storage) = 0;
+protected:
+   void drawDot(const Position& point, double radius, double red, double green, double blue) const;
+   void drawLine(const Position& begin, const Position& end, double red, double green, double blue) const;
+   void drawDisk(const Position& center, double radius, double red, double green, double blue) const;
+   void glVertexPoint(const Position& point) const;
 };
 
-
-class InterfacePellet {
+class InterfacePellet : public InterfaceElement {
 public:
-	void draw(StorageElement storage);
+	void draw(StorageElement storage) override;
 };
 
-class InterfaceMissle {
+class InterfaceMissle : public InterfaceElement {
 public:
-	void draw(StorageElement storage);
+	void draw(StorageElement storage) override;
 };
 
-class InterfaceBomb {
+class InterfaceBomb : public InterfaceElement {
 public:
-	void draw(StorageElement storage);
+	void draw(StorageElement storage) override;
 };
 
-class InterfaceShrapnel {
+class InterfaceShrapnel : public InterfaceElement {
 public:
-	void draw(StorageElement storage);
+	void draw(StorageElement storage) override;
 };
 
-class InterfaceFragment {
+class InterfaceFragment : public InterfaceElement {
 public:
-	void draw(StorageElement storage);
+	void draw(StorageElement storage) override;
 };
 
-class InterfaceExhaust {
+class InterfaceExhaust : public InterfaceElement {
 public:
-	void draw(StorageElement storage);
+	void draw(StorageElement storage) override;
 };
 
-class InterfaceStreek {
+class InterfaceStreek : public InterfaceElement {
 public:
-	void draw(StorageElement storage);
+	void draw(StorageElement storage) override;
 };
 
-class InterfaceStandard {
+class InterfaceStandard : public InterfaceElement {
 public:
-	void draw(StorageElement storage);
+	void draw(StorageElement storage) override;
 };
 
-class InterfaceSinker {
+class InterfaceSinker : public InterfaceElement {
 public:
-	void draw(StorageElement storage);
+	void draw(StorageElement storage) override;
 };
 
-class InterfaceFloater {
+class InterfaceFloater : public InterfaceElement {
 public:
-	void draw(StorageElement storage);
+	void draw(StorageElement storage) override;
 };
 
-class InterfaceCrazy {
+class InterfaceCrazy : public InterfaceElement {
 public:
-	void draw(StorageElement storage);
+	void draw(StorageElement storage) override;
 };
