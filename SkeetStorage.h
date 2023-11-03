@@ -1,7 +1,9 @@
 #pragma once
 #include <vector>
-#include "gun.h"
-#include "time.h"
+//#include "gun.h"
+//#include "time.h"
+#include "GunStorage.h"
+
 class StorageElement;
 class StorageBird;
 
@@ -22,7 +24,7 @@ public:
 	int getNumKilled() { return numKilled; }
 	int getNumMIssed() { return numBirds - numKilled; }
 	Time getTime() {return time;}
-	Gun getGun() { return gun; }
+	GunStorage& getGun() { return gun; }
 	typedef std::vector<StorageElement>::iterator IteratorBird;
 	typedef std::vector<StorageElement>::iterator IteratorBullet;
 	IteratorBird beginBird();
@@ -58,5 +60,5 @@ private:
 	int numBirds;
 	int numKilled;
 	Time time; //StorageTime time;
-	Gun gun; //StorageGun gun;
+	GunStorage gun; //StorageGun gun;
 };

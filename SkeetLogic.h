@@ -3,6 +3,7 @@
 #include <iterator> // for iterators
 #include "logicElement.h"
 #include "SkeetStorage.h"
+#include "uiInteract.h"
 
 class SkeetLogic
 {
@@ -10,7 +11,7 @@ public:
 	void Logic();
 	void advance();
 	void spawn();
-	void input();
+	void input(UserInput ui);
 	std::vector<StorageElement>::iterator begin() {
 		return storage.begin();
 	}

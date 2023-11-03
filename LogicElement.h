@@ -33,37 +33,37 @@ public:
 
 class LogicShrapnel : public LogicElement {
 public:
-	void advance(StorageEffect* storage, std::list<StorageEffect*>& effects);
+	void advance(StorageElement* storage, std::list<StorageEffect*>& effects);
 };
 
 class LogicFragment : public LogicElement {
 public:
-	void advance(StorageEffect* storage);
+	void advance(StorageElement* storage);
 };
 
 class LogicExhaust : public LogicElement {
 public:
-	void advance(StorageEffect* storage);
+	void advance(StorageElement* storage) override;
 };
 
 class LogicStreek : public LogicElement {
 public:
-	void advance(StorageEffect* storage);
+	void advance(StorageElement* storage) override;
 };
 
 class LogicStandard : public LogicElement {
 public:
-	void advance(StorageStandard* storage);
+	void advance(StorageElement* storage) override;
 };
 
 class LogicSinker : public LogicElement {
 public:
-	void advance(StorageElement* storage);
+	void advance(StorageElement* storage) override;
 };
 
 class LogicFloater : public LogicElement {
 public:
-	void advance(StorageElement* storage);
+	void advance(StorageElement* storage) override;
 };
 
 class LogicCrazy : public LogicElement {

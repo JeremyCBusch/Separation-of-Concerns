@@ -14,7 +14,7 @@ void LogicPellet::advance(StorageBullet * storage, std::list<StorageEffect*>& ef
 
    // out of bounds checker
    if (isOutOfBounds(storage))
-      storage->setisDead(true);
+      storage->setIsDead(true);
 }
 
 void LogicMissle::advance(StorageBullet* storage, std::list<StorageEffect*>& effects)
@@ -27,7 +27,7 @@ void LogicMissle::advance(StorageBullet* storage, std::list<StorageEffect*>& eff
 
    // out of bounds checker
    if (isOutOfBounds(storage))
-      storage->setisDead(true);
+      storage->setIsDead(true);
 }
 
 
@@ -37,14 +37,14 @@ void LogicBomb::advance(StorageBullet* storage, std::list<StorageEffect*>& effec
    // kill if it has been around too long
    storage->setTimeToDie(storage->getTimeToDie() - 1);
    if (storage->getTimeToDie() <= 0)
-      storage->setisDead(true);
+      storage->setIsDead(true);
 
    // inertia
    storage->getPosition()->add(*storage->getVelocity());
 
    // out of bounds checker
    if (isOutOfBounds(storage))
-      storage->setisDead(true);
+      storage->setIsDead(true);
 }
 
 void LogicShrapnel::advance(StorageEffect* storage, std::list<StorageEffect*>& effects)
@@ -52,7 +52,7 @@ void LogicShrapnel::advance(StorageEffect* storage, std::list<StorageEffect*>& e
    // kill if it has been around too long
    storage->setTimeToDie(storage->getTimeToDie() - 1);
    if (storage->getTimeToDie() <= 0)
-      storage->setisDead(true);
+      storage->setIsDead(true);
 
    // add a streek
    effects.push_back(new StorageStreek(storage->getPosition(), storage->getVelocity()));
@@ -63,7 +63,7 @@ void LogicShrapnel::advance(StorageEffect* storage, std::list<StorageEffect*>& e
 
    // out of bounds checker
    if (isOutOfBounds(storage))
-      storage->setisDead(true);
+      storage->setIsDead(true);
 }
 
 void LogicFragment::advance(StorageEffect* storage)
@@ -108,7 +108,7 @@ void LogicStandard::advance(StorageStandard* storage)
    // out of bounds checker
    if (isOutOfBounds(storage))
    {
-      storage->setisDead(true);
+      storage->setIsDead(true);
       storage->setPoints(storage->getPoints() * -1); // points go negative when it is missed!
    }
 }
@@ -124,7 +124,7 @@ void LogicSinker::advance(StorageElement* storage)
    // out of bounds checker
    if (isOutOfBounds(storage))
    {
-      storage->setisDead(true);
+      storage->setIsDead(true);
       storage->setPoints(storage->getPoints() * -1); // points go negative when it is missed!
    }
 }
@@ -144,7 +144,7 @@ void LogicFloater::advance(StorageElement* storage)
    // out of bounds checker
    if (isOutOfBounds(storage))
    {
-      storage->setisDead(true);
+      storage->setIsDead(true);
       storage->setPoints(storage->getPoints() * -1); // points go negative when it is missed!
    }
 }
@@ -158,7 +158,7 @@ void LogicCrazy::advance(StorageElement* storage)
    // out of bounds checker
    if (isOutOfBounds(storage))
    {
-      storage->setisDead(true);
+      storage->setIsDead(true);
       storage->setPoints(storage->getPoints() * -1); // points go negative when it is missed!
    }
 }

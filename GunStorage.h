@@ -6,17 +6,15 @@
 class GunStorage
 {
 public: 
-   GunStorage(const Position& pt) : interface(), logic(), angle(.78), pt(pt) {};
+   GunStorage(const Position& pt) : angle(.78), pt(pt) {};
 
-   double getAngle() { return angle; }
+   double getAngle() const { return angle; }
    void setAngle(double newAngle) { angle = newAngle; }
-   Position getPosition() { return pt; }
-   void setPosition(Position newPt) { pt = newPt; }
+   Position getPosition() const { return pt; }
+   void setPosition(const Position& newPt) { pt = newPt; }
 
 private:
    double angle;
    Position pt;
-   GunInterface interface;
-   GunLogic logic;
 };
 

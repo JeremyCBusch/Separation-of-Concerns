@@ -1,4 +1,4 @@
-#include "storageElement.h"
+#include "StorageElement.h"
 
 StorageShrapnel::StorageShrapnel(StorageBullet* bomb)
 {
@@ -35,7 +35,7 @@ StorageStreek::StorageStreek(Position* pt, Velocity* v)
    age = 0.5;
 }
 
-StorageBullet::StorageBullet(double angle = 0.0, double speed = 30.0, double radius = 5.0, int value = 1)
+StorageBullet::StorageBullet(double angle, double speed, double radius, int value)
 {
    this->isDead = false;
    this->angle = angle;

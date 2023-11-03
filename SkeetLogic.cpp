@@ -5,21 +5,54 @@
  * RANDOM
  * This function generates a random number.
  ****************************************************************/
-int random(int min, int max)
-{
-    assert(min < max);
-    int num = (rand() % (max - min)) + min;
-    assert(min <= num && num <= max);
-    return num;
-}
-double random(double min, double max)
-{
-    assert(min <= max);
-    double num = min + ((double)rand() / (double)RAND_MAX * (max - min));
-    assert(min <= num && num <= max);
-    return num;
-}
+//int random(int min, int max)
+//{
+//    assert(min < max);
+//    int num = (rand() % (max - min)) + min;
+//    assert(min <= num && num <= max);
+//    return num;
+//}
+//double random(double min, double max)
+//{
+//    assert(min <= max);
+//    double num = min + ((double)rand() / (double)RAND_MAX * (max - min));
+//    assert(min <= num && num <= max);
+//    return num;
+//}
 
+void SkeetLogic::input(UserInput ui) {
+   // reset the game
+   if (isGameOver() && ui.isSpace())
+   {
+      storage.reset();
+      return;
+   }
+
+   // gather input from the interface
+//   gun.interact(ui.isUp() + ui.isRight(), ui.isDown() + ui.isLeft());
+   storage.getGun().getInterface().input(ui);
+   BulletStorage *p = nullptr;
+
+   // a pellet can be shot at any time
+   if (ui.isSpace())
+      p = new Pellet(gun.getAngle());
+      // missiles can be shot at level 2 and higher
+   else if (ui.isM() && getLevelNumber() > 1)
+      p = new Missile(gun.getAngle());
+      // bombs can be shot at level 3 and higher
+   else if (ui.isB() && getLevelNumber() > 2)
+      p = new Bomb(gun.getAngle());
+
+   bullseye = ui.isShift();
+
+   // add something if something has been added
+   if (nullptr != p)
+      bullets.push_back(p);
+
+   // send movement information to all the bullets. Only the missile cares.
+   for (auto bullet : bullets)
+      bullet->input(ui.isUp() + ui.isRight(), ui.isDown() + ui.isLeft(), ui.isB());
+}
 
 /************************
  * SKEET SPAWN
