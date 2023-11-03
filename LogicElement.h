@@ -15,6 +15,8 @@ public:
 		return (storage->getPosition()->getX() < -storage->getRadius() || storage->getPosition()->getX() >= storage->getDimensions().getX() + storage->getRadius() ||
 			storage->getPosition()->getY() < -storage->getRadius() || storage->getPosition()->getY() >= storage->getDimensions().getY() + storage->getRadius());
 	}
+	int randomInt(int min, int max);
+	double randomFloat(double min, double max);
 };
 
 class LogicPellet : public LogicElement {
@@ -29,7 +31,7 @@ public:
 
 class LogicBomb : public LogicElement {
 public:
-	void death(std::list<StorageBullet*>& bullets);
+	void death(std::list<StorageBullet*>& bullets, StorageBullet* storage);
 	void advance(StorageBullet* storage, std::list<StorageEffect*>& effects);
 };
 
@@ -55,21 +57,21 @@ public:
 
 class LogicStandard : public LogicElement {
 public:
-	void advance(StorageBird* storage);
+	void advance(StorageStandard* storage);
 };
 
 class LogicSinker : public LogicElement {
 public:
-	void advance(StorageBird* storage);
+	void advance(StorageElement* storage);
 };
 
 class LogicFloater : public LogicElement {
 public:
-	void advance(StorageBird* storage);
+	void advance(StorageElement* storage);
 };
 
 class LogicCrazy : public LogicElement {
 public:
-	void advance(StorageBird* storage);
-	void turn(StorageBird* storage);
+	void advance(StorageElement* storage);
+	void turn(StorageElement* storage);
 };

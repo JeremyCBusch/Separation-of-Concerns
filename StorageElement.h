@@ -103,13 +103,13 @@ private:
 
 class StorageBullet : public StorageElement
 {
-private:
+protected:
 	double angle;
 	double speed;
 	double radius;
 	int value;
 	int timeToDie;
-	std::list<StorageEffect*>& effects;
+
 public:
 	StorageBullet(double angle = 0.0, double speed = 30.0, double radius = 5.0, int value = 1);
 
@@ -163,17 +163,17 @@ class StorageStreek : public StorageEffect
 private:
 	InterfaceStreek interface;
 public:
-	StorageStreek(Position& pt, Velocity v);
+	StorageStreek(Position* pt, Velocity* v);
 	InterfaceStreek getInterface() { return interface; }
 };
 
 
-class StorageShrapnel : public StorageEffect
+class StorageShrapnel : public StorageBullet
 {
 private:
 	InterfaceShrapnel interface;
 public:
-	StorageShrapnel(StorageBullet& bomb);
+	StorageShrapnel(StorageBullet* bomb);
 
 	InterfaceShrapnel getInterface() { return interface; }
 };
